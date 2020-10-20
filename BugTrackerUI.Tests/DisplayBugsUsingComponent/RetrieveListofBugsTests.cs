@@ -30,7 +30,7 @@ namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
                 file = streamReader.ReadToEnd();
             }
 
-            var pattern = @"\s*?protected\s*?override\s*?void\s*?\s*?OnInitialized[(][)]\s*?[{]\s*?Bugs\s*?=\s*?BugService.GetBugs[(][)].OrderBy[(]x => x.Priority[)].ToList[(][)];\s*?}\s*?";
+            var pattern = @"\s*?protected\s*?override\s*?void\s*?\s*?OnInitialized[(][)]\s*?[{]\s*?Bugs\s*?=\s*?BugService.GetBugs[(][)]\s*?.OrderBy[(]x => x.Priority[)]\s*?.ToList[(][)];\s*?}\s*?";
             var pattern2 = @"\s*?protected\s*?override\s*?void\s*?\s*?OnInitialized[(][)]\s*?[{]\s*?Bugs\s*?=\s*?BugService.GetBugs[(][)];\s*?}\s*?";
             var rgx = new Regex(pattern);
             var rgx2 = new Regex(pattern2);
